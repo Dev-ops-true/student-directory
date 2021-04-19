@@ -16,18 +16,18 @@
  def print(students)
   count = 0
   while count != students.length
-   puts "#{students[count][:name]} #{students[count][:cohort]} cohort"
+   puts "#{students[count][:name]} #{students[count][:cohort]} cohort".center(60)
    count += 1
   end
  end
 
  def print_header
-  puts "The students of my cohort at Makers"
-  puts "-----------"
+  puts "The students of my cohort at Makers".center(60, "-")
+  puts "-----------".center(60)
  end
 
  def print_footer(students)
-  puts "Overall, we have #{students.count} great students"
+  puts "Overall, we have #{students.count} great students".center(60)
  end
 students = input_students
 print_header
