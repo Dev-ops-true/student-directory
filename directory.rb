@@ -14,8 +14,10 @@
 
 
  def print(students)
- students.each do |student|
-   puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  count = 0
+  while count != students.length
+   puts "#{students[count][:name]} #{students[count][:cohort]} cohort"
+   count += 1
   end
  end
 
@@ -29,5 +31,5 @@
  end
 students = input_students
 print_header
-print students
+print(students)
 print_footer(students)
