@@ -4,10 +4,20 @@
   puts "To finish, just hit return twice"
   students = []
   name = gets.chomp
+  puts "Which cohort will this student join?"
+  cohort = gets.chomp
+    if cohort.empty?
+     cohort = "unknown"
+    end
   while !name.empty? do
-    students << {name: name, cohort: :november}
+    students << {name: name, cohort: cohort}
     puts "Now we have #{students.count} students"
     name = gets.chomp
+    puts "Which cohort will this student join?"
+    cohort = gets.chomp
+    if cohort.empty?
+     cohort = "unknown"
+    end
   end
  students
  end
