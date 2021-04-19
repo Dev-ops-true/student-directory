@@ -6,28 +6,37 @@
   name = gets.chomp
   puts "Which cohort will this student join?"
   cohort = gets.chomp
-    if cohort.empty?
-     cohort = "unknown"
-    end
+  if cohort.empty?
+   cohort = "unknown"
+  end
   while !name.empty? do
-    students << {name: name, cohort: cohort}
-    puts "Now we have #{students.count} students"
-    name = gets.chomp
-    puts "Which cohort will this student join?"
-    cohort = gets.chomp
-    if cohort.empty?
-     cohort = "unknown"
-    end
+   students << {name: name, cohort: cohort}
+   puts "Now we have #{students.count} students"
+   name = gets.chomp
+   puts "Which cohort will this student join?"
+   cohort = gets.chomp
+   if cohort.empty?
+    cohort = "unknown"
+   end
   end
- students
+  students
  end
 
 
- def print(students)
-  students.each_with_index do |student, index|
-   puts "#{index}.#{student[:name]} #{student[:cohort]} cohort".center(60)
-  end
- end
+# def print(students)
+#  students.each_with_index do |student, index|
+#   puts "#{index}.#{student[:name]} #{student[:cohort]} cohort".center(60)
+#  end
+# end
+
+def print(students)
+ month = []
+ cohort = "november"
+ students.map { |student| student[:cohort] == cohort ? month.push(student) : nil }
+ month.each_with_index do |student, index|
+ puts "#{index}.#{student[:name]} #{student[:cohort]} cohort".center(60)
+end
+end
 
 
  def print_header
