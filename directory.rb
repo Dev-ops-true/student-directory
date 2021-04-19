@@ -24,12 +24,11 @@
 
 
  def print(students)
-  count = 0
-  while count != students.length
-   puts "#{students[count][:name]} #{students[count][:cohort]} cohort".center(60)
-   count += 1
+  students.each_with_index do |student, index|
+   puts "#{index}.#{student[:name]} #{student[:cohort]} cohort".center(60)
   end
  end
+
 
  def print_header
   puts "The students of my cohort at Makers".center(60, "-")
