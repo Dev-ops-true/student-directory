@@ -3,9 +3,9 @@
   puts "Please enter the names of the student"
   puts "To finish, just hit return twice"
   students = []
-  name = gets.chomp
+  name = String.new(gets).strip
   puts "Which cohort will this student join?"
-  cohort = gets.chomp
+  cohort = String.new(gets).strip
   if cohort.empty?
    cohort = "unknown"
   end
@@ -16,9 +16,9 @@
    else
    puts "Now we have #{students.count} student"
    end
-  name = gets.chomp
+  name = String.new(gets).strip
   puts "Which cohort will this student join?"
-  cohort = gets.chomp
+  cohort = String.new(gets).strip
 
    if cohort.empty?
     cohort = "unknown"
