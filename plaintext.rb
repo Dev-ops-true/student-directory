@@ -23,8 +23,12 @@ def print_header
 end
 
 def print(students)
-  students.each do |student|
+  if students.empty?
+    puts "No students have been registered"
+  else
+    students.each do |student|
     puts "#{student[:name]} #{student[:cohort]} cohort"
+    end
   end
 end
 
